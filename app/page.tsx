@@ -8,7 +8,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
-          Not-organic public Blog by yggdrasill501:
+          Not-organic public blog by yggdrasill501:
         </h1>
         <ul className="space-y-4">
           {allPostsData.map(({ id, date, title }) => (
