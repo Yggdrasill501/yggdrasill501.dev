@@ -41,19 +41,23 @@ export function getSortedPostsData(): PostData[] {
 }
 
 export async function getPostData(id: string): Promise<PostContent> {
-	const fullPath = path.join(postsDirectory, `${id}.md`);
-	const fileContents = fs.readFileSync(fullPath, 'utf8');
-	const matterResult = matter(fileContents);
-	const processedContent = await remark()
-		.use(html)
-		.process(matterResult.content);
-	const contentHtml = processedContent.toString();
+	try {
+		const fullPath = path.join(postsDirectory, `${id}.md`);
+		const fileContents = await fs.promises.readFile(fullPath, 'utf8');
+		const matterResult = matter(fileContents);
+		const processedContent = await remark()
+			.use(html)
+			.process(matterResult.content);
+		const contentHtml = processedContent.toString();
 
-	return {
-		id,
-		title: matterResult.data.title as string,
-		date: matterResult.data.date as string,
-		contentHtml,
-	};
+		return {
+			id,
+			title: matterResult.data.title as string,
+			date: matterResult.data.date as string,
+			contentHtml,
+		};
+	} catch (error) {
+		console.error(`Error fetching post data: ${error}`);
+		throw new Error('Could not fetch post data');
+	}
 }
-
