@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "INDEX", kana: "索引" },
   { href: "/projects", label: "WORK", kana: "仕事" },
+  { href: "/cv", label: "CV", kana: "履歴" },
   { href: "/about", label: "ABOUT", kana: "私" },
   { href: "/blog", label: "LOG", kana: "記録" },
 ];

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { Button } from "../components/ui/button";
@@ -7,7 +8,7 @@ export const metadata = { title: "ABOUT / 私 — Filip Žitný" };
 
 const facts: Array<{ k: string; v: string }> = [
   { k: "ROLE", v: "Software engineer" },
-  { k: "LOCALE", v: "Bratislava, SK" },
+  { k: "LOCALE", v: "Prague / SF" },
   { k: "INTO", v: "low-level, compilers, quantum" },
   { k: "TOOLS", v: "Rust · Go · C · Python · TS" },
   { k: "AVOID", v: "frameworks of the month" },
@@ -53,20 +54,22 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <Link href="/cv">
                 <Button variant="rust" size="lg">
-                  DOWNLOAD CV ↓
+                  READ CV →
+                </Button>
+              </Link>
+              <a href="/cv_filip_zitny.pdf" target="_blank" rel="noopener noreferrer" download>
+                <Button variant="outline" size="lg">
+                  PDF ↓
                 </Button>
               </a>
-              <a href="mailto:filipzitny@gmail.com">
-                <Button variant="outline" size="lg">
+              <a href="mailto:filipzitny@proton.me">
+                <Button variant="ghost" size="lg">
                   EMAIL →
                 </Button>
               </a>
             </div>
-            <p className="font-mono text-[11px] text-bone/40">
-              {"// drop cv.pdf into /public to enable the download"}
-            </p>
           </article>
 
           <aside className="col-span-12 md:col-span-5">

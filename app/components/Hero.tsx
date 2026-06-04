@@ -18,7 +18,7 @@ export default function Hero() {
         </Badge>
         <Badge variant="outline">VER 02.6</Badge>
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
-          ／ BRATISLAVA — 48.14°N
+          ／ PRAGUE 50.08°N · SF 37.77°N
         </span>
       </div>
 
