@@ -4,31 +4,47 @@
 
 @layer base {
   :root {
+    /* DARK (default) */
+    --ink: 10 10 10;
+    --bone: 237 237 237;
+    --ash: 26 26 26;
+    --smoke: 42 42 42;
+    --rust: 255 0 51;
+    --rustdim: 204 0 41;
     color-scheme: dark;
+  }
+
+  :root.light {
+    --ink: 237 235 230;    /* warm off-white paper */
+    --bone: 26 26 26;      /* darker gray, not pure black */
+    --ash: 218 215 208;    /* slightly darker paper for cards */
+    --smoke: 200 196 188;  /* dividers / borders soft */
+    /* rust stays consistent across themes */
+    color-scheme: light;
   }
 
   html,
   body {
-    background: #0a0a0a;
-    color: #ededed;
+    background: rgb(var(--ink));
+    color: rgb(var(--bone));
     font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
     -webkit-font-smoothing: antialiased;
   }
 
   body {
     background-image:
-      linear-gradient(to right, rgba(237, 237, 237, 0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(237, 237, 237, 0.035) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--bone) / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--bone) / 0.06) 1px, transparent 1px);
     background-size: 160px 160px;
   }
 
   ::selection {
-    background: #ff0033;
-    color: #0a0a0a;
+    background: rgb(var(--rust));
+    color: rgb(var(--ink));
   }
 
   *:focus-visible {
-    outline: 2px solid #ff0033;
+    outline: 2px solid rgb(var(--rust));
     outline-offset: 2px;
   }
 }
@@ -40,8 +56,8 @@
   .scanline {
     background-image: repeating-linear-gradient(
       0deg,
-      rgba(237, 237, 237, 0.04) 0px,
-      rgba(237, 237, 237, 0.04) 1px,
+      rgb(var(--bone) / 0.05) 0px,
+      rgb(var(--bone) / 0.05) 1px,
       transparent 1px,
       transparent 3px
     );
