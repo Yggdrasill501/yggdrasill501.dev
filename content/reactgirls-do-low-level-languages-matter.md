@@ -4,6 +4,8 @@ date: '2024-10-17'
 autor: 'Filip Žitný'
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iKZEol3GQXg?si=8AqDVRp1S7MIMRlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ***And what do they theach us?***
 
 This article is my invite junior developers, CS students or anybody who is still sacred of pointers.

@@ -1,40 +1,33 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import NavBar from './components/NavBar';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "yggdrasill501",
-  description: "Not-organic public blog by yggdrasill501",
-  icons: {
-    icon: "/favicon.png",
-  },
+  title: "FILIP ŽITNÝ // フィリップ",
+  description:
+    "Software engineer. Low-level languages, quantum computing, alt-tech. Personal site of Filip Žitný.",
+  icons: { icon: "/favicon.png" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div>
-          <NavBar />
-          <button onClick={() => window.location.href='/blog'}>Go to Blog</button>
-          {children}
-        </div>
+    <html lang="en" className={`${jetbrainsMono.variable} ${spaceGrotesk.variable}`}>
+      <body className="min-h-screen bg-ink text-bone antialiased">
+        {children}
       </body>
     </html>
   );

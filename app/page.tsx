@@ -1,28 +1,64 @@
 import Link from "next/link";
-import { getSortedPostsData, PostData } from "../lib/posts";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import ProjectCard from "./components/ProjectCard";
+import { Button } from "./components/ui/button";
+import { featuredProjects } from "./projects/data";
 
 export default function Home() {
-  const allPostsData: PostData[] = getSortedPostsData();
-
   return (
-    <main className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
-          Not-organic public blog by yggdrasill501:
-        </h1>
-        <ul className="space-y-4">
-          {allPostsData.map(({ id, date, title }) => (
-            <li key={id} className="bg-white shadow-md rounded-lg p-6">
-              <Link href={`/posts/${id}`} className="block">
-                <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-                  {title}
-                </h2>
-                <p className="text-gray-600">{date}</p>
-              </Link>
-            </li>
+    <>
+      <Nav />
+      <Hero />
+
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mb-6 flex items-end justify-between border-b-2 border-bone/30 pb-3">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
+              §02 ／ 仕事
+            </div>
+            <h2 className="font-display text-3xl font-black uppercase">Selected work</h2>
+          </div>
+          <Link href="/projects" className="font-mono text-xs uppercase tracking-[0.2em] text-rust hover:underline">
+            all →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {featuredProjects.slice(0, 4).map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
           ))}
-        </ul>
-      </div>
-    </main>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-6xl px-4 sm:px-6">
+        <div className="border-2 border-bone bg-ash p-8 shadow-brut-rust sm:p-12">
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
+            §03 ／ TRANSMIT
+          </div>
+          <h2 className="mt-2 font-display text-3xl font-black uppercase sm:text-5xl">
+            Want to build something <span className="text-rust">strange?</span>
+          </h2>
+          <p className="mt-4 max-w-2xl font-mono text-sm text-bone/75">
+            I&apos;m open to interesting engineering work — especially anything involving
+            compilers, low-level systems, or quantum stuff. Send a signal.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="mailto:filipzitny@gmail.com">
+              <Button variant="rust" size="lg">
+                MAIL →
+              </Button>
+            </a>
+            <Link href="/about">
+              <Button variant="outline" size="lg">
+                READ MORE
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
   );
 }
