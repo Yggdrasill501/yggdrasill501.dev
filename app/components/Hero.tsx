@@ -48,9 +48,9 @@ export default function Hero() {
             ▓ NOW
           </div>
           <ul className="space-y-1 font-mono text-xs text-bone/75">
-            <li>→ writing Rust &amp; Go</li>
-            <li>→ reading qc papers</li>
-            <li>→ avoiding JS where possible</li>
+            <li>→ shipping AI agents @ duvo</li>
+            <li>→ writing TypeScript + Python</li>
+            <li>→ living inside Claude Code</li>
           </ul>
         </aside>
       </div>
