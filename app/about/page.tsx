@@ -65,7 +65,7 @@ export default function AboutPage() {
               </a>
             </div>
             <p className="font-mono text-[11px] text-bone/40">
-              // drop cv.pdf into /public to enable the download
+              {"// drop cv.pdf into /public to enable the download"}
             </p>
           </article>
 

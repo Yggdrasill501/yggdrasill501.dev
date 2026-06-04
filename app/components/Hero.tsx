@@ -9,7 +9,7 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute right-2 top-8 hidden font-mono text-[10px] uppercase tracking-[0.3em] text-bone/30 vertical-rl sm:block"
       >
-        // OS: ALT / STATUS: ONLINE
+        {"// OS: ALT / STATUS: ONLINE"}
       </div>
 
       <div className="mb-6 flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function Hero() {
             touch.
           </p>
           <p className="mt-3 font-mono text-xs text-bone/45">
-            // signal &gt; noise. less polish, more honesty.
+            {"// signal > noise. less polish, more honesty."}
           </p>
         </div>
 
