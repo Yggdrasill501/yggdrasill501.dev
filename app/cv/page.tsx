@@ -171,7 +171,8 @@ export default function CvPage() {
         </section>
 
         <p className="mt-12 border-t-2 border-bone/20 pt-4 font-mono text-[11px] uppercase tracking-[0.25em] text-bone/35">
-          // end of transmission ／ last sync: {new Date().toISOString().slice(0, 10)}
+          {"// end of transmission ／ last sync: "}
+          {new Date().toISOString().slice(0, 10)}
         </p>
       </main>
       <Footer />
