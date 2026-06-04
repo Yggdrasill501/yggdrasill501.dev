@@ -10,23 +10,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0a0a0a",
-        bone: "#ededed",
-        ash: "#1a1a1a",
-        smoke: "#2a2a2a",
-        rust: "#ff0033",
-        rustdim: "#cc0029",
-        border: "#ededed",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        bone: "rgb(var(--bone) / <alpha-value>)",
+        ash: "rgb(var(--ash) / <alpha-value>)",
+        smoke: "rgb(var(--smoke) / <alpha-value>)",
+        rust: "rgb(var(--rust) / <alpha-value>)",
+        rustdim: "rgb(var(--rustdim) / <alpha-value>)",
+        border: "rgb(var(--bone) / <alpha-value>)",
       },
       fontFamily: {
         mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
         display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        brut: "6px 6px 0 0 #ededed",
-        "brut-sm": "3px 3px 0 0 #ededed",
-        "brut-rust": "6px 6px 0 0 #ff0033",
-        "brut-rust-sm": "3px 3px 0 0 #ff0033",
+        brut: "6px 6px 0 0 rgb(var(--bone))",
+        "brut-sm": "3px 3px 0 0 rgb(var(--bone))",
+        "brut-rust": "6px 6px 0 0 rgb(var(--rust))",
+        "brut-rust-sm": "3px 3px 0 0 rgb(var(--rust))",
       },
       keyframes: {
         marquee: {

@@ -21,11 +21,20 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.png" },
 };
 
+const noFlashScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.add('light');}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: noFlashScript }} />
+      </head>
       <body className="min-h-screen bg-ink text-bone antialiased">
         {children}
       </body>

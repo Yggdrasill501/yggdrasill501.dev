@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "INDEX", kana: "索引" },
@@ -20,21 +21,24 @@ export default function Nav() {
             yggdrasill501.dev
           </span>
         </Link>
-        <ul className="flex items-center gap-1 sm:gap-2">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="group relative flex flex-col items-center px-2 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/80 hover:text-rust"
-              >
-                <span>{l.label}</span>
-                <span className="text-[9px] text-bone/30 group-hover:text-rust/60">
-                  {l.kana}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <ul className="flex items-center gap-1 sm:gap-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="group relative flex flex-col items-center px-2 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/80 hover:text-rust"
+                >
+                  <span>{l.label}</span>
+                  <span className="text-[9px] text-bone/30 group-hover:text-rust/60">
+                    {l.kana}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
