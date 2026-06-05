@@ -59,7 +59,7 @@ export const experience: Role[] = [
   },
   {
     title: "Software Engineer",
-    company: "Digiteq Automotive",
+    company: "Volkswagen",
     dates: "Mar 2023 – May 2024",
     bullets: [
       "Built and maintained a Python framework for automotive test automation, covering Android infotainment systems and CI/CD execution at scale.",
@@ -68,7 +68,7 @@ export const experience: Role[] = [
     ],
   },
   {
-    title: "Co-Founder",
+    title: "Community",
     company: "HackNitra",
     dates: "Sep 2023 – Present",
     bullets: [
