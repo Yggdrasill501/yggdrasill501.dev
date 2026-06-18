@@ -32,14 +32,27 @@ export default function Hero() {
       <div className="mt-8 grid grid-cols-12 gap-4">
         <div className="col-span-12 border-l-2 border-rust pl-4 md:col-span-7">
           <p className="font-mono text-sm leading-relaxed text-bone/85 sm:text-base">
-            Software engineer. I build things close to the metal and things that
-            shouldn&apos;t exist yet. Curious about{" "}
-            <span className="text-rust">low-level languages</span>, quantum
-            computing, and the parts of the stack everyone&apos;s afraid to
-            touch.
+            Product engineer working both sides of the product —{" "}
+            <span className="text-rust">AI systems</span> and the{" "}
+            <span className="text-rust">growth and GTM</span> around them.
+            I ship full-stack in TypeScript + Python and own the path from
+            agentic backend to activated user.
+          </p>
+          <p className="mt-3 font-mono text-sm leading-relaxed text-bone/70">
+            Currently building AI operational workflows at{" "}
+            <a
+              href="https://duvo.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rust hover:underline"
+            >
+              Duvo
+            </a>
+            . Previously open-source lead at{" "}
+            <span className="text-bone">Deepnote</span> (YC W19).
           </p>
           <p className="mt-3 font-mono text-xs text-bone/45">
-            {"// signal > noise. less polish, more honesty."}
+            {"// signal > noise. less polish, more shipped."}
           </p>
         </div>
 

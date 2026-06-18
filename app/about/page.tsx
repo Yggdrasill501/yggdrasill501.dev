@@ -32,25 +32,45 @@ export default function AboutPage() {
         <div className="grid grid-cols-12 gap-8">
           <article className="col-span-12 space-y-5 font-mono text-sm leading-relaxed text-bone/85 md:col-span-7">
             <p>
-              I&apos;m <span className="text-rust">Filip</span> — a software engineer
-              from Slovakia who got into computers the wrong way (assembly before
-              JavaScript) and never quite recovered.
+              I&apos;m <span className="text-rust">Filip</span> — a product
+              engineer working between Prague and SF. I sit between
+              engineering, growth, and GTM, and I&apos;m at my best shipping
+              AI-native product end-to-end.
             </p>
             <p>
-              Day to day I write the kind of code most people scroll past: low-level
-              systems, infra glue, weird tools. I&apos;m drawn to compilers, type
-              systems, and the parts of the stack where things still feel honest.
+              Right now I&apos;m at{" "}
+              <a
+                href="https://duvo.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rust hover:underline"
+              >
+                Duvo
+              </a>
+              , building AI-powered operational automation that goes past
+              copilot suggestions into full end-to-end workflows. TypeScript +
+              Python, working tight with the founding team to turn customer
+              problems into shipped agentic systems.
             </p>
             <p>
-              On the side I read about <span className="text-rust">quantum computing</span>{" "}
-              — not the marketing kind, the linear-algebra kind. I&apos;ve given
-              talks (ReactGirls on low-level languages, 2024) and I keep a small
-              blog of notes on this site.
+              Before Duvo I spent ~18 months at{" "}
+              <span className="text-rust">Deepnote</span> (YC W19) — first as
+              Data Scientist on Growth, then Software Engineer on the AI team,
+              then Open Source Lead. Across all of it I owned things from spec
+              to activated user: LLM context engineering, PLG experiments, SEO,
+              funnel ops. That AI-eng × growth-eng mix is what I do best.
             </p>
             <p>
-              I believe in <span className="text-rust">signal &gt; noise</span>.
-              Less polish, more honesty. No frameworks because they&apos;re
-              trending. No tools without a reason.
+              Before that: cybersecurity at <span className="text-bone">Global Payments</span>{" "}
+              (PCI DSS, K8s migration), automotive test infra at{" "}
+              <span className="text-bone">Volkswagen</span> (Python/C++), and a
+              quantitative CS track at <span className="text-bone">CTU Prague</span>.
+              Co-founded <span className="text-bone">HackNitra</span> to push
+              open data and modern education in Slovakia.
+            </p>
+            <p>
+              I care about <span className="text-rust">signal &gt; noise</span>.
+              Less polish, more shipped. No tools without a reason.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

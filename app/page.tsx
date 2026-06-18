@@ -16,11 +16,13 @@ export default function Home() {
             §02 ／ TRANSMIT
           </div>
           <h2 className="mt-2 font-display text-3xl font-black uppercase sm:text-5xl">
-            Want to build something <span className="text-rust">strange?</span>
+            Looking for an engineer who ships the{" "}
+            <span className="text-rust">whole loop?</span>
           </h2>
           <p className="mt-4 max-w-2xl font-mono text-sm text-bone/75">
-            I&apos;m open to interesting engineering work — especially anything involving
-            compilers, low-level systems, or quantum stuff. Send a signal.
+            Hiring, raising, or going zero-to-one and need an engineer who can
+            ship the product <em>and</em> the growth surfaces around it? AI,
+            agents, PLG, early-stage — those are my favourite problems.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="mailto:filipzitny@proton.me">
