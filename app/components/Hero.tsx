@@ -63,7 +63,7 @@ export default function Hero() {
           <ul className="space-y-1 font-mono text-xs text-bone/75">
             <li>→ shipping AI agents @ duvo</li>
             <li>→ writing TypeScript + Python</li>
-            <li>→ living inside Claude Code</li>
+            <li>→ living inside Terminal</li>
           </ul>
         </aside>
       </div>

@@ -7,12 +7,12 @@ import { Badge } from "../components/ui/badge";
 export const metadata = { title: "ABOUT / 私 — Filip Žitný" };
 
 const facts: Array<{ k: string; v: string }> = [
-  { k: "ROLE", v: "Software engineer" },
+  { k: "ROLE", v: "Product Engineer" },
   { k: "LOCALE", v: "Prague / SF" },
-  { k: "INTO", v: "low-level, compilers, quantum" },
-  { k: "TOOLS", v: "Rust · Go · C · Python · TS" },
-  { k: "AVOID", v: "frameworks of the month" },
-  { k: "MUSIC", v: "techno · ambient · noise" },
+  { k: "AT", v: "Duvo · prev. Deepnote (YC W19)" },
+  { k: "FOCUS", v: "AI product · growth · GTM" },
+  { k: "STACK", v: "TypeScript · Python · Go · C++" },
+  { k: "INTO", v: "zero-to-one · agentic systems · funnel craft" },
 ];
 
 export default function AboutPage() {
@@ -140,10 +140,10 @@ export default function AboutPage() {
                 <li>
                   →{" "}
                   <a
-                    href="mailto:filipzitny@gmail.com"
+                    href="mailto:filipzitny@proton.me"
                     className="hover:text-rust"
                   >
-                    filipzitny@gmail.com
+                    filipzitny@proton.me
                   </a>
                 </li>
               </ul>
