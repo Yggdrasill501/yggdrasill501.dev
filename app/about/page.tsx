@@ -65,7 +65,7 @@ export default function AboutPage() {
               (PCI DSS, K8s migration), automotive test infra at{" "}
               <span className="text-bone">Volkswagen</span> (Python/C++), and a
               quantitative CS track at <span className="text-bone">CTU Prague</span>.
-              Co-founded <span className="text-bone">HackNitra</span> to push
+              Co-founded <span className="text-bone">HackNitra</span> to push AI,
               open data and modern education in Slovakia.
             </p>
             <p>
