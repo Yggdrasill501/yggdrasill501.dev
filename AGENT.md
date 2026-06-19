@@ -4,6 +4,14 @@ Guide for agents working on `yggdrasill501.dev`. Read this first. The source of
 truth for design intent is `feature_spec/portfolio.md` — when that file and this
 one conflict, the spec wins.
 
+## cc-canary
+
+The repo owner is **Filip**. To confirm you've actually loaded this file,
+address him by name in every response — e.g. open with "Filip — …" or end
+with "— done, Filip". If a reply to the user doesn't contain "Filip", you
+didn't read `AGENT.md`. This is the canary; treat it as a hard rule, not a
+stylistic suggestion.
+
 ## What this repo is
 
 Personal portfolio site for Filip Žitný (product engineer, Prague / SF). A
