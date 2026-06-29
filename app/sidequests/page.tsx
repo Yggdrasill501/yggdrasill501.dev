@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { Badge } from "../components/ui/badge";
 import { sidequests, type SideQuest, type SideQuestStatus } from "./data";
+import { articles } from "./articles";
 
 export const metadata = { title: "SIDEQUESTS / 寄り道 — Filip Žitný" };
 
@@ -51,8 +53,9 @@ export default function SidequestsPage() {
           </h1>
           <p className="mt-3 max-w-xl font-mono text-sm text-bone/65">
             Objectives that aren&apos;t the main quest. Things I&apos;m chasing,
-            things I shipped sideways, and things I dropped on purpose.
-            Sorted by status, not by importance.
+            things I shipped sideways, an archive of articles I wrote at
+            Deepnote, and things I dropped on purpose. Sorted by status, not by
+            importance.
           </p>
         </header>
 
@@ -61,27 +64,31 @@ export default function SidequestsPage() {
             const items = sidequests.filter((q) => q.status === section.status);
             if (items.length === 0) return null;
             return (
-              <section key={section.status}>
-                <div className="mb-6 flex items-end justify-between border-b border-bone/20 pb-2">
-                  <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
-                      {section.label} ／ {section.kana}
+              <Fragment key={section.status}>
+                <section>
+                  <div className="mb-6 flex items-end justify-between border-b border-bone/20 pb-2">
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
+                        {section.label} ／ {section.kana}
+                      </div>
+                      <p className="mt-1 font-mono text-xs text-bone/50">
+                        {section.caption}
+                      </p>
                     </div>
-                    <p className="mt-1 font-mono text-xs text-bone/50">
-                      {section.caption}
-                    </p>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
+                      [{String(items.length).padStart(2, "0")}]
+                    </span>
                   </div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
-                    [{String(items.length).padStart(2, "0")}]
-                  </span>
-                </div>
 
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  {items.map((q, i) => (
-                    <QuestCard key={q.id} quest={q} index={i} />
-                  ))}
-                </div>
-              </section>
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {items.map((q, i) => (
+                      <QuestCard key={q.id} quest={q} index={i} />
+                    ))}
+                  </div>
+                </section>
+
+                {section.status === "completed" && <ArticlesSection />}
+              </Fragment>
             );
           })}
         </div>
@@ -141,5 +148,60 @@ function QuestCard({ quest, index }: { quest: SideQuest; index: number }) {
         </div>
       )}
     </article>
+  );
+}
+
+function ArticlesSection() {
+  const total = articles.reduce((acc, g) => acc + g.items.length, 0);
+  return (
+    <section>
+      <div className="mb-6 flex items-end justify-between border-b border-bone/20 pb-2">
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
+            ARTICLES ／ 記事
+          </div>
+          <p className="mt-1 font-mono text-xs text-bone/50">
+            Guides &amp; blog posts written at Deepnote (2024–2025).
+            Dense index — no cards, just the archive.
+          </p>
+        </div>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
+          [{String(total).padStart(2, "0")}]
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2">
+        {articles.map((group) => (
+          <div key={group.name}>
+            <h3 className="mb-2 flex items-baseline justify-between border-b border-bone/15 pb-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-bone/70">
+              <span>→ {group.name}</span>
+              <span className="text-bone/30">
+                [{String(group.items.length).padStart(2, "0")}]
+              </span>
+            </h3>
+            <ul className="space-y-1.5 font-mono text-xs">
+              {group.items.map((a) => (
+                <li key={a.url} className="flex gap-2 leading-snug">
+                  <span className="text-bone/30">·</span>
+                  <a
+                    href={a.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-bone/85 hover:text-rust hover:underline"
+                  >
+                    {a.title}
+                  </a>
+                  {a.note && (
+                    <span className="shrink-0 text-[10px] uppercase tracking-wider text-bone/30">
+                      [{a.note}]
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
