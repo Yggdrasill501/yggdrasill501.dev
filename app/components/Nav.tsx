@@ -2,8 +2,8 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "/cv", label: "EXPERIENCE", kana: "経験" },
   { href: "/about", label: "ABOUT", kana: "私" },
+  { href: "/cv", label: "EXPERIENCE", kana: "経験" },
   { href: "/blog", label: "LOG", kana: "記録" },
 ];
 
