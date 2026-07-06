@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/cv">
+              <Link href="/experience">
                 <Button variant="rust" size="lg">
                   READ CV →
                 </Button>

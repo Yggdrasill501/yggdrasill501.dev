@@ -18,11 +18,8 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-12 gap-4 px-4 py-10 sm:px-6">
-        <div className="col-span-12 sm:col-span-4">
+        <div className="col-span-12 sm:col-span-4 sm:pt-3">
           <div className="font-display text-3xl font-black uppercase break-all">yggdrasill501<span className="text-rust">.dev</span></div>
-          <p className="mt-2 max-w-xs font-mono text-xs text-bone/50">
-            Personal site. Hand-built, no tracking, no cookies, no nonsense.
-          </p>
         </div>
 
         <div className="col-span-6 sm:col-span-3">
@@ -82,7 +79,6 @@ export default function Footer() {
           </div>
           <ul className="space-y-1 font-mono text-xs text-bone/60">
             <li>BUILT WITH NEXT.JS + TAILWIND</li>
-            <li>NO ANALYTICS · NO ADS</li>
             <li>© {year} FILIP ŽITNÝ</li>
           </ul>
         </div>

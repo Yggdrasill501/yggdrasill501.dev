@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/about", label: "ABOUT", kana: "私" },
-  { href: "/cv", label: "EXPERIENCE", kana: "経験" },
+  { href: "/experience", label: "EXPERIENCE", kana: "経験" },
   { href: "/sidequests", label: "SIDEQUESTS", kana: "寄り道" },
 ];
 
