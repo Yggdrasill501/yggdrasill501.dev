@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -16,7 +18,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-12 gap-4 px-4 py-10 sm:px-6">
-        <div className="col-span-12 sm:col-span-5">
+        <div className="col-span-12 sm:col-span-4">
           <div className="font-display text-3xl font-black uppercase break-all">yggdrasill501<span className="text-rust">.dev</span></div>
           <p className="mt-2 max-w-xs font-mono text-xs text-bone/50">
             Personal site. Hand-built, no tracking, no cookies, no nonsense.
@@ -56,7 +58,25 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="col-span-6 sm:col-span-4">
+        <div className="col-span-6 sm:col-span-2">
+          <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
+            PAGES
+          </div>
+          <ul className="space-y-1 font-mono text-xs">
+            <li>
+              <Link href="/how-do-i-work" className="hover:text-rust">
+                how do i work →
+              </Link>
+            </li>
+            <li>
+              <Link href="/how-to-work-with-me" className="hover:text-rust">
+                how to work with me →
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="col-span-12 sm:col-span-3">
           <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
             META
           </div>

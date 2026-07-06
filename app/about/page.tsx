@@ -73,6 +73,39 @@ export default function AboutPage() {
               Less polish, more shipped. No tools without a reason.
             </p>
 
+            <div className="mt-6 border-2 border-bone/40 bg-ash/60 p-5">
+              <div className="mb-3 flex items-center justify-between border-b border-bone/20 pb-2">
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-rust">
+                  MORE ／ もっと
+                </span>
+                <Badge variant="outline">DRAFT</Badge>
+              </div>
+              <ul className="space-y-2 font-mono text-xs">
+                <li className="flex items-baseline gap-2">
+                  <span className="text-bone/40">→</span>
+                  <Link
+                    href="/how-do-i-work"
+                    className="hover:text-rust hover:underline"
+                  >
+                    HOW DO I WORK
+                  </Link>
+                  <span className="text-bone/40">— my rig, editor, loop</span>
+                </li>
+                <li className="flex items-baseline gap-2">
+                  <span className="text-bone/40">→</span>
+                  <Link
+                    href="/how-to-work-with-me"
+                    className="hover:text-rust hover:underline"
+                  >
+                    HOW TO WORK WITH ME
+                  </Link>
+                  <span className="text-bone/40">
+                    — the operating manual, if we&apos;re about to collaborate
+                  </span>
+                </li>
+              </ul>
+            </div>
+
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/cv">
                 <Button variant="rust" size="lg">
