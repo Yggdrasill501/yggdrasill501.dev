@@ -1,0 +1,99 @@
+# Filip Žitný
+
+> Product engineer working between Prague and SF. Sits between engineering, growth, and GTM; ships AI-native product end-to-end. Currently at Duvo, previously Deepnote (YC W19).
+
+This is the personal site of Filip Žitný (yggdrasill501.dev). The content below is inlined so an agent can answer most questions from this file alone, without crawling the rest of the site.
+
+## Bio
+
+I'm Filip — a product engineer working between Prague and SF. I sit between engineering, growth, and GTM, and I'm at my best shipping AI-native product end-to-end.
+
+Right now I'm at [Duvo](https://duvo.ai), building AI-powered operational automation that goes past copilot suggestions into full end-to-end workflows. TypeScript + Python, working tight with the founding team to turn customer problems into shipped agentic systems.
+
+Before Duvo I spent ~18 months at Deepnote (YC W19) — first as Data Scientist on Growth, then Software Engineer on the AI team, then Open Source Lead. Across all of it I owned things from spec to activated user: LLM context engineering, PLG experiments, SEO, funnel ops.
+
+Before that: cybersecurity at Global Payments (PCI DSS, K8s migration), automotive test infra at Volkswagen (Python/C++), and a quantitative CS track at CTU Prague. Co-founded HackNitra to push AI, open data and modern education in Slovakia.
+
+I care about signal > noise. Less polish, more shipped. No tools without a reason.
+
+- Role: Product Engineer
+- Locale: Prague / SF
+- Stack: TypeScript · Python · Go · C++
+- Focus: AI product · growth · GTM
+- Into: zero-to-one · agentic systems · funnel craft
+
+## Experience
+
+**Product Engineer — Duvo** (Dec 2025 – Present, https://duvo.ai)
+- Build AI-powered automation that goes beyond copilot suggestions to complete end-to-end operational workflows where rigid scripts and prompts fall short.
+- Ship product features across the stack in TypeScript and Python, working closely with the founding team to translate customer problems into shippable agentic solutions.
+- Use Claude Code and other coding agents as part of daily workflow to scaffold integrations and accelerate delivery while maintaining production-grade test coverage and code review standards.
+
+**Software Engineer & Open Source Lead — Deepnote (YC W19)** (Jun 2024 – Nov 2025)
+Open Source Lead (Jun–Nov 2025) · Software Engineer, AI Team (Jan–Nov 2025) · Data Scientist (Aug 2024–Jan 2025) · Data Science Intern (Jun–Aug 2024)
+- Led a cross-functional team of engineers to open-source Deepnote — an AI-first Jupyter replacement with real-time collaboration and deployable data apps — defining repo structure, contribution model, and release process.
+- Built the LLM implementation layer and context engineering for the AI workspace, shipping features that grounded model outputs in users' notebooks and data.
+- As Product Engineer on the Growth team, drove SEO and product-led growth experiments in TypeScript/Next.js, owning the funnel from landing page to activated workspace.
+- Started as Data Science Intern and converted to full-time Data Scientist on Growth, building data pipelines and dashboards in Python/SQL that informed marketing and product decisions.
+
+**Cyber Security Engineer — Global Payments Inc.** (May 2024 – Sep 2024)
+- Designed security architecture and led migration of internal services from VMware to Kubernetes, hardening deployment pipelines for PCI DSS-compliant payment processing.
+- Built defense tooling in Go and embedded DevSecOps practices into CI/CD, shifting vulnerability detection earlier in the delivery cycle.
+
+**Software Engineer — Volkswagen** (Mar 2023 – May 2024)
+- Built and maintained a Python framework for automotive test automation, covering Android infotainment systems and CI/CD execution at scale.
+- Developed C++ desktop applications and core libraries, plus data processing pipelines used by QA and engineering teams.
+- Trained AI models to represent driver behavior and infotainment interaction patterns for use in test scenario generation.
+
+**Community — HackNitra** (Sep 2023 – Present)
+- Co-founded an NGO and community in Nitra, Slovakia bringing together developers, students, and civic technologists around open data, AI, public-sector digitization, and modern education.
+
+**Education**
+- Czech Technical University in Prague — Informatics in Natural Sciences, Faculty of Nuclear Sciences and Physical Engineering (2022–2025)
+- Charles University in Prague — Computer Science, Faculty of Mathematics and Physics (2021–2022)
+
+**Skills**
+- Languages: TypeScript · Python · Go · C++
+- Frontend: React · Next.js
+- Backend/Infra: Node.js · PostgreSQL · Docker · Kubernetes · AWS/GCP/Azure
+- AI/Tooling: LLM application layer · context engineering · agentic workflows · Claude Code · Linux · Git · CI/CD
+
+## Projects
+
+- **yggdrasill501.dev** (2026, live) — This site. Hand-built brutalist portfolio. Next.js + Tailwind, no UI lib, no tracking.
+- **Do low-level languages matter?** (2024, live) — Talk at ReactGirls on why every web dev should touch C, Rust, Go or Zig at least once. https://www.youtube.com/watch?v=iKZEol3GQXg
+- **Quantum notes** (2025, WIP) — Personal notes and toy implementations from reading quantum computing papers (Python, Qiskit).
+- **Untitled/TBA** (2026, WIP) — Something between a compiler and a misbehaviour, Rust/LLVM. More info soon.
+
+## Sidequests
+
+Personal pursuits outside of work:
+- Read a vending machine without Google Translate — getting fluent in hiragana + katakana (ongoing).
+- Ship one real thing in Zig — not a hello world, something a human would actually run (ongoing).
+- Sub-3:30 marathon (ongoing).
+- Co-founded HackNitra (2023, completed) — community/NGO in Nitra, Slovakia.
+- Argued for low-level languages at ReactGirls (2024, completed) — https://www.youtube.com/watch?v=iKZEol3GQXg
+- The Nth personal site rewrite (every year, completed) — this one might stick.
+- Quantum computing notes (2025, abandoned) — reading papers, toy Qiskit implementations; moved on but kept the notes.
+
+## Contact
+
+- Email: filipzitny@proton.me
+- GitHub: https://github.com/Yggdrasill501
+- LinkedIn: https://www.linkedin.com/in/filip-zitny501/
+- CV (PDF): https://yggdrasill501.dev/cv_filip_zitny.pdf
+
+## Pages
+
+- [Home](https://yggdrasill501.dev/)
+- [About](https://yggdrasill501.dev/about)
+- [Experience / CV](https://yggdrasill501.dev/experience)
+- [Projects](https://yggdrasill501.dev/projects)
+- [Sidequests](https://yggdrasill501.dev/sidequests)
+
+## Optional
+
+Draft/placeholder pages, not yet written — low value to fetch:
+- [How Do I Work](https://yggdrasill501.dev/how-do-i-work): planned sections on hardware, editor, AI tooling, daily loop; currently unwritten.
+- [How To Work With Me](https://yggdrasill501.dev/how-to-work-with-me): planned operating manual for collaborators; currently unwritten.
+- [Log](https://yggdrasill501.dev/blog): blog/notes, currently empty ("coming back online soon").
