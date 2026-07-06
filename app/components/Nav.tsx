@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
@@ -12,9 +13,14 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 border-b-2 border-bone/80 bg-ink/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="group flex items-center gap-2">
-          <span className="border-2 border-bone bg-rust px-2 py-0.5 font-display text-sm font-black tracking-tight text-ink">
-            FZ
-          </span>
+          <Image
+            src="/favicon.png"
+            alt="yggdrasill501.dev"
+            width={32}
+            height={32}
+            priority
+            className="block h-8 w-8"
+          />
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-bone/60 sm:inline">
             yggdrasill501.dev
           </span>
