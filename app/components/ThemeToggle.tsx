@@ -40,6 +40,15 @@ export default function ThemeToggle() {
 
   const isLight = theme === "light";
 
+  if (!mounted) {
+    return (
+      <div
+        aria-hidden
+        className="inline-flex h-9 w-[78px] border-2 border-bone bg-transparent shadow-brut-sm"
+      />
+    );
+  }
+
   return (
     <button
       type="button"
@@ -48,7 +57,6 @@ export default function ThemeToggle() {
       aria-checked={isLight}
       aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
       title={`Switch to ${isLight ? "dark" : "light"} mode`}
-      suppressHydrationWarning
       className="relative inline-flex h-9 w-[78px] cursor-pointer items-center border-2 border-bone bg-transparent shadow-brut-sm transition-[transform,box-shadow] hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-brut active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
     >
       <span
@@ -58,8 +66,8 @@ export default function ThemeToggle() {
         }`}
       />
       <span className="relative z-10 grid w-full grid-cols-2 items-center justify-items-center font-mono text-sm leading-none">
-        <span className={mounted && !isLight ? "text-ink" : "text-bone/45"}>☾</span>
-        <span className={mounted && isLight ? "text-ink" : "text-bone/45"}>☀</span>
+        <span className={!isLight ? "text-ink" : "text-bone/45"}>☾</span>
+        <span className={isLight ? "text-ink" : "text-bone/45"}>☀</span>
       </span>
     </button>
   );
