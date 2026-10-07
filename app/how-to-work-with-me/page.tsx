@@ -151,7 +151,7 @@ export default function HowToWorkWithMePage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-12 border-b-2 border-bone/30 pb-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
             §07 ／ 説明書 ／ HOW TO WORK WITH ME
@@ -184,16 +184,12 @@ export default function HowToWorkWithMePage() {
             Read the manual, still want to work together?
           </h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <a href="mailto:filipzitny@proton.me">
-              <Button variant="rust" size="lg">
-                MAIL →
-              </Button>
-            </a>
-            <Link href="/about">
-              <Button variant="outline" size="lg">
-                ABOUT
-              </Button>
-            </Link>
+            <Button asChild variant="rust" size="lg">
+              <a href="mailto:filipzitny@proton.me">MAIL →</a>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/about">ABOUT</Link>
+            </Button>
           </div>
         </div>
       </main>

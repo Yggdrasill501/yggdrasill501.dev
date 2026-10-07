@@ -41,7 +41,7 @@ export default function SidequestsPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-12 border-b-2 border-bone/30 pb-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
             §04 ／ 寄り道 ／ SIDEQUESTS &amp; STORIES
@@ -64,9 +64,9 @@ export default function SidequestsPage() {
               <section key={section.status}>
                 <div className="mb-6 flex items-end justify-between border-b border-bone/20 pb-2">
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
+                    <h2 className="font-mono text-[10px] font-normal uppercase tracking-[0.3em] text-rust">
                       {section.label} ／ {section.kana}
-                    </div>
+                    </h2>
                     <p className="mt-1 font-mono text-xs text-bone/50">
                       {section.caption}
                     </p>
@@ -95,11 +95,11 @@ function QuestCard({ quest, index }: { quest: SideQuest; index: number }) {
   return (
     <article className="flex h-full flex-col border-2 border-bone bg-ash p-5 shadow-brut-sm transition-[transform,box-shadow] hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-brut">
       <header className="mb-3 flex items-start justify-between gap-3">
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-col">
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
             [SQ-{String(index + 1).padStart(2, "0")}] · {quest.era}
           </span>
-          <h3 className="mt-1 font-display text-xl font-black uppercase leading-tight">
+          <h3 className="mt-1 break-words font-display text-xl font-black uppercase leading-tight">
             {quest.title}
           </h3>
           {quest.kana && (

@@ -15,7 +15,7 @@ export default async function Post({ params }: { params: { id: string } }) {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-3xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <Link
           href="/blog"
           className="mb-6 inline-block font-mono text-[10px] uppercase tracking-[0.25em] text-bone/50 hover:text-rust"
@@ -34,7 +34,7 @@ export default async function Post({ params }: { params: { id: string } }) {
         </header>
 
         <article
-          className="prose prose-invert max-w-none
+          className="prose max-w-none break-words
             prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight
             prose-h2:border-l-2 prose-h2:border-rust prose-h2:pl-3
             prose-a:text-rust prose-a:no-underline hover:prose-a:underline

@@ -10,7 +10,7 @@ export default function CvPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-10 border-b-2 border-bone/30 pb-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
             §05 ／ 履歴 ／ CURRICULUM VITAE
@@ -28,21 +28,19 @@ export default function CvPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <a
-                href={profile.pdfPath}
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-              >
-                <Button variant="rust" size="lg">
+              <Button asChild variant="rust" size="lg">
+                <a
+                  href={profile.pdfPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
                   DOWNLOAD PDF ↓
-                </Button>
-              </a>
-              <a href={`mailto:${profile.email}`}>
-                <Button variant="outline" size="lg">
-                  EMAIL →
-                </Button>
-              </a>
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href={`mailto:${profile.email}`}>EMAIL →</a>
+              </Button>
             </div>
           </div>
 
@@ -54,16 +52,17 @@ export default function CvPage() {
               { k: "GIT", v: profile.github, href: `https://${profile.github}` },
               { k: "LINKEDIN", v: profile.linkedin, href: `https://${profile.linkedin}` },
             ].map((item) => (
-              <div key={item.k} className="flex flex-col">
+              <div key={item.k} className="flex min-w-0 flex-col">
                 <dt className="text-[10px] uppercase tracking-[0.25em] text-bone/40">
                   {item.k}
                 </dt>
-                <dd className="truncate">
+                <dd className="truncate" translate="no">
                   {item.href ? (
                     <a
                       href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...(item.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="hover:text-rust"
                     >
                       {item.v}
@@ -120,7 +119,7 @@ export default function CvPage() {
                   <ul className="mt-3 space-y-2 border-l-2 border-bone/30 pl-4 font-mono text-sm leading-relaxed text-bone/80">
                     {role.bullets.map((b, j) => (
                       <li key={j} className="relative">
-                        <span className="absolute -left-[1.05rem] top-2 inline-block h-1.5 w-1.5 bg-rust" />
+                        <span aria-hidden className="absolute -left-[1.05rem] top-2 inline-block h-1.5 w-1.5 bg-rust" />
                         {b}
                       </li>
                     ))}

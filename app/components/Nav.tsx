@@ -10,12 +10,20 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b-2 border-bone/80 bg-ink/85 backdrop-blur">
+    <nav
+      aria-label="Primary"
+      className="sticky top-0 z-50 border-b-2 border-bone/80 bg-ink/85 backdrop-blur"
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="group flex items-center gap-2">
+        <Link
+          href="/"
+          aria-label="yggdrasill501.dev — home"
+          translate="no"
+          className="group flex items-center gap-2"
+        >
           <Image
             src="/favicon.png"
-            alt="yggdrasill501.dev"
+            alt=""
             width={32}
             height={32}
             priority
@@ -34,7 +42,11 @@ export default function Nav() {
                   className="group relative flex flex-col items-center px-2 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-bone/80 hover:text-rust"
                 >
                   <span>{l.label}</span>
-                  <span className="text-[9px] text-bone/30 group-hover:text-rust/60">
+                  <span
+                    aria-hidden
+                    lang="ja"
+                    className="text-[9px] text-bone/30 group-hover:text-rust/60"
+                  >
                     {l.kana}
                   </span>
                 </Link>

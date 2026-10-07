@@ -9,7 +9,7 @@ export default function BlogPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-12 border-b-2 border-bone/30 pb-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
             §04 ／ 記録 ／ LOG
@@ -23,10 +23,10 @@ export default function BlogPage() {
         </header>
 
         <div className="relative border-2 border-bone bg-ash p-10 text-center shadow-brut sm:p-16">
-          <div className="absolute inset-0 scanline opacity-40 pointer-events-none" />
+          <div aria-hidden className="absolute inset-0 scanline opacity-40 pointer-events-none" />
           <div className="relative">
             <div className="mx-auto mb-6 inline-flex items-center gap-2 border-2 border-rust bg-rust/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.3em] text-rust">
-              <span className="h-1.5 w-1.5 animate-blink bg-rust" /> NO SIGNAL
+              <span aria-hidden className="h-1.5 w-1.5 animate-blink bg-rust" /> NO SIGNAL
             </div>
             <h2 className="font-display text-4xl font-black uppercase sm:text-6xl">
               SOON<span className="text-rust">.</span>
@@ -36,12 +36,12 @@ export default function BlogPage() {
               not before.
             </p>
             <div className="mt-8 flex justify-center gap-3">
-              <Link href="/projects">
-                <Button variant="outline">SEE WORK</Button>
-              </Link>
-              <Link href="/">
-                <Button variant="ghost">↩ HOME</Button>
-              </Link>
+              <Button asChild variant="outline">
+                <Link href="/projects">SEE WORK</Link>
+              </Button>
+              <Button asChild variant="ghost">
+                <Link href="/">↩ HOME</Link>
+              </Button>
             </div>
           </div>
         </div>

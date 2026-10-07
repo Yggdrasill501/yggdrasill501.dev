@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className="mb-6 flex items-center gap-3">
         <Badge variant="rust">
-          <span className="h-1.5 w-1.5 animate-blink bg-ink" /> ONLINE
+          <span aria-hidden className="h-1.5 w-1.5 animate-blink bg-ink" /> ONLINE
         </Badge>
         <Badge variant="outline">VER 02.6</Badge>
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-bone/40">
@@ -26,7 +26,7 @@ export default function Hero() {
         FILIP
         <br />
         <span className="text-rust">ŽITNÝ</span>
-        <span className="ml-3 align-top text-2xl font-normal text-bone/40 sm:text-3xl">／フィリップ</span>
+        <span lang="ja" className="ml-3 align-top text-2xl font-normal text-bone/40 sm:text-3xl">／フィリップ</span>
       </h1>
 
       <div className="mt-8 grid grid-cols-12 gap-4">
@@ -69,34 +69,30 @@ export default function Hero() {
       </div>
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Link href="/projects">
-          <Button variant="rust" size="lg">
-            VIEW WORK →
-          </Button>
-        </Link>
-        <Link href="/about">
-          <Button variant="outline" size="lg">
-            ABOUT
-          </Button>
-        </Link>
-        <a
-          href="https://github.com/Yggdrasill501"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="ghost" size="lg">
+        <Button asChild variant="rust" size="lg">
+          <Link href="/projects">VIEW WORK →</Link>
+        </Button>
+        <Button asChild variant="outline" size="lg">
+          <Link href="/about">ABOUT</Link>
+        </Button>
+        <Button asChild variant="ghost" size="lg">
+          <a
+            href="https://github.com/Yggdrasill501"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GITHUB ↗
-          </Button>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/filip-zitny501/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="ghost" size="lg">
+          </a>
+        </Button>
+        <Button asChild variant="ghost" size="lg">
+          <a
+            href="https://www.linkedin.com/in/filip-zitny501/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LINKEDIN ↗
-          </Button>
-        </a>
+          </a>
+        </Button>
       </div>
     </section>
   );

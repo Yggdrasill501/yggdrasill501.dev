@@ -49,7 +49,7 @@ export default function HowDoIWorkPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-5xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-12 border-b-2 border-bone/30 pb-6">
           <div className="flex items-center gap-3">
             <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
@@ -80,11 +80,9 @@ export default function HowDoIWorkPage() {
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone/40">
             {"// end of page ／ next:"}
           </p>
-          <Link href="/how-to-work-with-me">
-            <Button variant="rust" size="lg">
-              HOW TO WORK WITH ME →
-            </Button>
-          </Link>
+          <Button asChild variant="rust" size="lg">
+            <Link href="/how-to-work-with-me">HOW TO WORK WITH ME →</Link>
+          </Button>
         </div>
       </main>
       <Footer />

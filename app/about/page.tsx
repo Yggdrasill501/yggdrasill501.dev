@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-12 pb-20 sm:px-6 sm:pt-20">
         <header className="mb-12 border-b-2 border-bone/30 pb-6">
           <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone/40">
             §03 ／ 私 ／ ABOUT
@@ -82,7 +82,7 @@ export default function AboutPage() {
               </div>
               <ul className="space-y-2 font-mono text-xs">
                 <li className="flex items-baseline gap-2">
-                  <span className="text-bone/40">→</span>
+                  <span aria-hidden className="text-bone/40">→</span>
                   <Link
                     href="/how-do-i-work"
                     className="hover:text-rust hover:underline"
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   <span className="text-bone/40">— my rig, editor, loop</span>
                 </li>
                 <li className="flex items-baseline gap-2">
-                  <span className="text-bone/40">→</span>
+                  <span aria-hidden className="text-bone/40">→</span>
                   <Link
                     href="/how-to-work-with-me"
                     className="hover:text-rust hover:underline"
@@ -107,21 +107,17 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/experience">
-                <Button variant="rust" size="lg">
-                  READ CV →
-                </Button>
-              </Link>
-              <a href="/cv_filip_zitny.pdf" target="_blank" rel="noopener noreferrer" download>
-                <Button variant="outline" size="lg">
+              <Button asChild variant="rust" size="lg">
+                <Link href="/experience">READ CV →</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="/cv_filip_zitny.pdf" target="_blank" rel="noopener noreferrer" download>
                   PDF ↓
-                </Button>
-              </a>
-              <a href="mailto:filipzitny@proton.me">
-                <Button variant="ghost" size="lg">
-                  EMAIL →
-                </Button>
-              </a>
+                </a>
+              </Button>
+              <Button asChild variant="ghost" size="lg">
+                <a href="mailto:filipzitny@proton.me">EMAIL →</a>
+              </Button>
             </div>
           </article>
 

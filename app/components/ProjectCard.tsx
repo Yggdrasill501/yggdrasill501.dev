@@ -24,13 +24,15 @@ export default function ProjectCard({ project, index }: { project: Project; inde
   return (
     <Card accent={project.accent}>
       <CardHeader>
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-col">
           <CardMeta>
             [{String(index + 1).padStart(2, "0")}] · {project.year}
           </CardMeta>
-          <CardTitle>{project.title}</CardTitle>
+          <CardTitle asChild>
+            <h2>{project.title}</h2>
+          </CardTitle>
           {project.kana && (
-            <span className="font-mono text-xs text-bone/40">{project.kana}</span>
+            <span lang="ja" className="font-mono text-xs text-bone/40">{project.kana}</span>
           )}
         </div>
         <Badge variant={statusVariant[project.status]}>{project.status}</Badge>

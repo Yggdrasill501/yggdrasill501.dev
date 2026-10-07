@@ -31,6 +31,22 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  html {
+    scroll-padding-top: 5rem; /* keep focused / anchored content clear of the sticky nav */
+    -webkit-tap-highlight-color: rgb(var(--rust) / 0.25);
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
   body {
     background-image:
       linear-gradient(to right, rgb(var(--bone) / 0.06) 1px, transparent 1px),
@@ -46,6 +62,15 @@
   *:focus-visible {
     outline: 2px solid rgb(var(--rust));
     outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 

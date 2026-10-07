@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../../lib/utils";
+import { Slot } from "./slot";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap border-2 font-mono text-xs uppercase tracking-[0.18em] transition-[transform,box-shadow] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none disabled:pointer-events-none disabled:opacity-40",
@@ -29,17 +30,25 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  /** Render the single child element (e.g. a link) with the button styles instead of a `<button>`. */
   asChild?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => (
-    <button
-      ref={ref}
-      className={cn(buttonVariants({ variant, size }), className)}
-      {...props}
-    />
-  )
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const classes = cn(buttonVariants({ variant, size }), className);
+    if (asChild) {
+      return (
+        <Slot
+          ref={ref as React.Ref<HTMLElement>}
+          data-slot="button"
+          className={classes}
+          {...props}
+        />
+      );
+    }
+    return <button ref={ref} data-slot="button" className={classes} {...props} />;
+  }
 );
 Button.displayName = "Button";
 

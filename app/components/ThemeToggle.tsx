@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 
 type Theme = "dark" | "light";
 
+const themeColor: Record<Theme, string> = {
+  dark: "#0a0a0a",
+  light: "#edebe6",
+};
+
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
@@ -27,6 +32,9 @@ export default function ThemeToggle() {
     const root = document.documentElement;
     if (next === "light") root.classList.add("light");
     else root.classList.remove("light");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", themeColor[next]);
   }
 
   function toggle() {
@@ -55,19 +63,22 @@ export default function ThemeToggle() {
       onClick={toggle}
       role="switch"
       aria-checked={isLight}
-      aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
+      aria-label="Light mode"
       title={`Switch to ${isLight ? "dark" : "light"} mode`}
-      className="relative inline-flex h-9 w-[78px] cursor-pointer items-center border-2 border-bone bg-transparent shadow-brut-sm transition-[transform,box-shadow] hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-brut active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+      data-slot="theme-toggle"
+      data-state={theme}
+      className="group relative inline-flex h-9 w-[78px] cursor-pointer items-center border-2 border-bone bg-transparent shadow-brut-sm transition-[transform,box-shadow] hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-brut active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
     >
       <span
         aria-hidden
-        className={`pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-rust transition-transform duration-150 ${
-          isLight ? "translate-x-full" : "translate-x-0"
-        }`}
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-rust transition-transform duration-150 group-data-[state=light]:translate-x-full"
       />
-      <span className="relative z-10 grid w-full grid-cols-2 items-center justify-items-center font-mono text-sm leading-none">
-        <span className={!isLight ? "text-ink" : "text-bone/45"}>☾</span>
-        <span className={isLight ? "text-ink" : "text-bone/45"}>☀</span>
+      <span
+        aria-hidden
+        className="relative z-10 grid w-full grid-cols-2 items-center justify-items-center font-mono text-sm leading-none"
+      >
+        <span className="text-ink group-data-[state=light]:text-bone/45">☾</span>
+        <span className="text-bone/45 group-data-[state=light]:text-ink">☀</span>
       </span>
     </button>
   );
