@@ -28,8 +28,9 @@ product — AI systems and the growth and GTM around them.*
 - **Next.js 14** App Router + **TypeScript** strict.
 - **Tailwind** with CSS-variable-driven theme tokens.
 - **No UI library.** Primitives are hand-built in `app/components/ui/`
-  (Button, Card, Badge) using `class-variance-authority`. Do not add Radix /
-  shadcn / framer-motion / similar.
+  (Button, Card, Badge, Slot) using `class-variance-authority`. Do not add
+  Radix / shadcn / framer-motion / similar — `slot.tsx` is our own minimal
+  `asChild` implementation.
 - **Fonts** via `next/font/google`: `JetBrains_Mono` (body) + `Space_Grotesk`
   (display headings).
 - **Markdown posts** in `content/`, parsed with `gray-matter` + `remark`.
@@ -49,23 +50,30 @@ No test suite yet.
 
 ```
 app/
-  layout.tsx            root layout, fonts, no-flash theme script
+  layout.tsx            root layout, fonts, no-flash theme script, skip link,
+                        theme-color
   page.tsx              home (Hero + TRANSMIT CTA + Footer)
-  globals.css           theme vars, grid bg (160×160), utilities
+  globals.css           theme vars, grid bg (160×160), utilities, base a11y
+                        rules (focus ring, reduced motion, scroll-padding)
   components/
     Nav.tsx             sticky nav + kana labels + ThemeToggle
     Hero.tsx            landing hero
-    Footer.tsx          rust marquee + Channels/Meta columns
+    Footer.tsx          rust marquee + Channels/Pages/Meta columns
     ProjectCard.tsx     brutalist project card
-    ThemeToggle.tsx     sliding-knob theme switch
+    ThemeToggle.tsx     sliding-knob theme switch (role="switch")
     ui/
-      button.tsx        cva: default | rust | outline | ghost
+      button.tsx        cva: default | rust | outline | ghost; `asChild`
       card.tsx          Card + CardHeader/Title/Meta/Content/Footer
-      badge.tsx         default | rust | outline
+      badge.tsx         cva: default | rust | outline
+      slot.tsx          hand-built Slot backing `asChild`
   projects/page.tsx     project grid (currently hidden from Nav)
   projects/data.ts      project entries
-  cv/page.tsx           CV page
-  cv/data.ts            CV data (source of truth for /cv page)
+  experience/page.tsx   CV page (`/cv` redirects here in next.config.mjs)
+  experience/data.ts    CV data (source of truth for /experience)
+  sidequests/page.tsx   sidequests by status (active / completed / abandoned)
+  sidequests/data.ts    sidequest entries
+  how-do-i-work/        rig + loop page (placeholder blocks)
+  how-to-work-with-me/  operating manual
   about/page.tsx        bio + PROFILE.SYS + LINKS sidebars
   blog/page.tsx         "NO SIGNAL / SOON" placeholder
   posts/[id]/page.tsx   markdown post renderer
@@ -93,8 +101,13 @@ references them via `rgb(var(--token) / <alpha-value>)` so utilities like
 | `--rust`    | `255 0 51`      | (same)          | accent — techno red                  |
 | `--rustdim` | `204 0 41`      | (same)          | accent dim                           |
 
-Shadows: `shadow-brut` (6px), `shadow-brut-sm` (3px), `shadow-brut-rust`,
-`shadow-brut-rust-sm`. Body grid: `160px × 160px`. Don't shrink it.
+Shadows: `shadow-brut` (6px), `shadow-brut-sm` (3px), `shadow-brut-lg` (8px),
+plus `shadow-brut-rust`, `-rust-sm`, `-rust-lg`. Never hardcode hex colours in
+classes (`shadow-[…_#ededed]`) — they don't flip in light mode. Body grid:
+`160px × 160px`. Don't shrink it.
+
+Markdown posts: `prose` colours are mapped to the tokens in
+`tailwind.config.ts` (`typography.DEFAULT`). Don't use `prose-invert`.
 
 Light mode is intentionally **paper, not pure white**, and `--bone` in light is
 **darker gray, not pure black**. Keep it that way.
@@ -138,15 +151,13 @@ files before assuming they're still open:
   `/projects` is hidden from `Nav.tsx`.
 - Hero `VER 02.6` badge — arbitrary; decide keep / kill / replace.
 - Footer marquee may still contain `低 LEVEL` (off-brand).
-- Footer Channels column email may still be `filipzitny@gmail.com` while
-  About is already on `proton.me`.
 - `app/projects/data.ts` still has `quantum-notes` and the `compiler/LLVM`
   placeholder — both off-brand. Replace with Duvo/Deepnote/growth-flavoured
   entries or keep the page hidden.
-- Nav says `EXPERIENCE` but URL is `/cv`. Possible rename to `/experience`
-  with redirect.
-- `/cv` page says `Prague / SF`; the downloadable PDF in `/public/` may still
-  say `Prague, Czechia` (regenerate source PDF).
+- `/experience` page says `Prague / SF`; the downloadable PDF in `/public/`
+  may still say `Prague, Czechia` (regenerate source PDF).
+- Footer marquee runs forever with no pause control; it only stops under
+  `prefers-reduced-motion`.
 
 If you fix one, grep the rest of the repo for the same string — these tend to
 appear in pairs.
@@ -160,4 +171,35 @@ appear in pairs.
   `app/components/ui/`. Use `cva` for variant APIs to match `button.tsx`.
 - Use the `cn()` helper from `lib/utils.ts` for conditional class merging.
 - Path alias: `@/*` maps to repo root (see `tsconfig.json`).
+
+### Component rules
+
+- One component = one element. Extend the native HTML attributes, spread
+  `{...props}`, merge `className` last via `cn()`, and export a
+  `<Name>Props` type.
+- Give every primitive a `data-slot="kebab-name"`. Expose state as
+  `data-state` and style from it (`group-data-[state=light]:…`) rather than
+  branching class strings — see `ThemeToggle.tsx`.
+- **Never nest `<button>` inside `<a>` / `<Link>`.** For a link that looks
+  like a button: `<Button asChild><Link href="…">LABEL</Link></Button>`.
+  Same for `CardTitle asChild` when the heading level needs to change.
+
+### Accessibility + interface rules
+
+- Every page wraps its content in `<main id="main">` — the skip link in
+  `layout.tsx` targets it.
+- Headings stay hierarchical: one `<h1>` per page, no skipped levels.
+- Decorative glyphs (blink dots, arrows, bullets, scanlines) get
+  `aria-hidden`. Kana gets `lang="ja"`; `aria-hidden` too when it only
+  repeats the label beside it (as in Nav).
+- Focus ring is global (`*:focus-visible` in `globals.css`). Don't add
+  `outline-none`.
+- Motion is disabled globally under `prefers-reduced-motion`. Animate
+  `transform` / `opacity` only, and list transition properties explicitly —
+  no `transition-all`.
+- `target="_blank"` + `rel="noopener noreferrer"` on external `http(s)`
+  links only — never on `mailto:` / `tel:`.
+- Truncating text inside flex/grid needs `min-w-0` on the child.
+- If the page background tokens change, update `themeColor` in both
+  `layout.tsx` and `ThemeToggle.tsx`.
 - When adding copy, run it past the voice rules above before committing.
