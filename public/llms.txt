@@ -68,12 +68,11 @@ Open Source Lead (Jun–Nov 2025) · Software Engineer, AI Team (Jan–Nov 2025)
 ## Sidequests
 
 Personal pursuits outside of work:
-- Read a vending machine without Google Translate — getting fluent in hiragana + katakana (ongoing).
-- Ship one real thing in Zig — not a hello world, something a human would actually run (ongoing).
-- Sub-3:30 marathon (ongoing).
+- Climb K2 before I turn 30 — the big goal for the next six years (ongoing, by 2032).
+- Matterhorn + Mont Blanc within a year — first steps toward K2 (ongoing, by 2027).
+- 10 km under an hour — current running target; stretch goal is 20 km under 2 hours (ongoing).
+- Occasional speaker (2024 onward) — e.g. a ReactGirls talk on low-level languages: https://www.youtube.com/watch?v=iKZEol3GQXg
 - Co-founded HackNitra (2023, completed) — community/NGO in Nitra, Slovakia.
-- Argued for low-level languages at ReactGirls (2024, completed) — https://www.youtube.com/watch?v=iKZEol3GQXg
-- The Nth personal site rewrite (every year, completed) — this one might stick.
 - Quantum computing notes (2025, abandoned) — reading papers, toy Qiskit implementations; moved on but kept the notes.
 
 ## Contact

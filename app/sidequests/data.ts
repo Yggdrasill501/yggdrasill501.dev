@@ -13,32 +13,32 @@ export interface SideQuest {
 
 export const sidequests: SideQuest[] = [
   {
-    id: "kana-vending",
-    title: "Read a vending machine without Google Translate",
-    kana: "自販機",
-    era: "ONGOING",
+    id: "k2-before-30",
+    title: "Climb K2 before I turn 30",
+    kana: "山",
+    era: "→ 2032",
     status: "active",
     description:
-      "Get fluent enough in hiragana + katakana to buy a drink in Japan without translation-app cope. Currently at 'can confidently spot コーヒー'.",
-    tags: ["language", "japan"],
+      "The big one for the next six years. Everything else on the mountain side of this list is a step toward standing on top of K2 before my 30th birthday.",
+    tags: ["mountains", "longterm"],
   },
   {
-    id: "zig-real-thing",
-    title: "Ship one real thing in Zig",
-    era: "ONGOING",
+    id: "matterhorn-mont-blanc",
+    title: "Matterhorn + Mont Blanc within a year",
+    era: "→ 2027",
     status: "active",
     description:
-      "Not a hello world. Not a benchmark. Something a human would actually download and run on purpose.",
-    tags: ["lang", "engineering"],
+      "The first two rungs on the way to K2. Both summits inside the next twelve months.",
+    tags: ["mountains", "alps"],
   },
   {
-    id: "marathon",
-    title: "Sub-3:30 marathon",
+    id: "running",
+    title: "10 km under an hour",
     era: "ONGOING",
     status: "active",
     description:
-      "Slowly turning compute-bound legs into something that can survive 42.2 km without renegotiating life choices at km 32.",
-    tags: ["body", "longterm"],
+      "Current target: 10 km in under 60 minutes. Stretch goal: 20 km in under 2 hours.",
+    tags: ["body", "running"],
   },
   {
     id: "hacknitra",
@@ -51,23 +51,14 @@ export const sidequests: SideQuest[] = [
     tags: ["community", "slovakia"],
   },
   {
-    id: "reactgirls-low-level",
-    title: "Argued for low-level languages at ReactGirls",
-    era: "2024",
-    status: "completed",
+    id: "occasional-speaker",
+    title: "Occasional speaker",
+    era: "2024 →",
+    status: "active",
     description:
-      "Gave a talk arguing every web dev should touch C, Rust, Go, or Zig at least once. Survived the Q&A. The framing is retired, the talk still rules.",
+      "I get on a stage now and then when I have something worth saying. One of them: a ReactGirls talk on why every web dev should touch C, Rust, Go, or Zig at least once.",
     tags: ["talk"],
     href: "https://www.youtube.com/watch?v=iKZEol3GQXg",
-  },
-  {
-    id: "site-rewrite-n",
-    title: "The Nth personal site rewrite",
-    era: "every year",
-    status: "completed",
-    description:
-      "Started, deleted, started again. This one (yggdrasill501.dev) might actually stick because there's nothing left to rewrite — it's already a single red dot and some kana.",
-    tags: ["meta"],
   },
   {
     id: "quantum-notes",
